@@ -6,8 +6,8 @@ const cartButton = document.getElementById('cartButton');
 const form = document.getElementById('form');
 const colorInput = document.getElementById('colorInput');
 
-const blackCar = "blanco.jfif";
-const whiteCar = "negro.jfif";
+const blackCar = "negro.jfif";
+const whiteCar = "blanco.jfif";
 
 // imagen inicial
 imageCard.style.backgroundImage = `url(${blackCar})`;
