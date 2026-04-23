@@ -3,17 +3,16 @@ const blackBtn = document.querySelector('.black-btn');
 const whiteBtn = document.querySelector('.white-btn');
 const imageCard = document.getElementById('imageCard');
 const cartButton = document.getElementById('cartButton');
-const form = document.querySelector('.form-card');
+const form = document.getElementById('form');
 const colorInput = document.getElementById('colorInput');
 
-// imágenes
 const blackCar = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800";
 const whiteCar = "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800";
 
 // imagen inicial
 imageCard.style.backgroundImage = `url(${blackCar})`;
 
-/* ===== NEGRO ===== */
+/* NEGRO */
 blackBtn.addEventListener('click', () => {
     colorInput.value = "negro";
 
@@ -28,7 +27,7 @@ blackBtn.addEventListener('click', () => {
     imageCard.style.backgroundImage = `url(${blackCar})`;
 });
 
-/* ===== BLANCO ===== */
+/* BLANCO */
 whiteBtn.addEventListener('click', () => {
     colorInput.value = "blanco";
 
@@ -44,7 +43,7 @@ whiteBtn.addEventListener('click', () => {
     imageCard.style.backgroundImage = `url(${whiteCar})`;
 });
 
-/* ===== CARRITO ===== */
+/* CARRITO */
 cartButton.addEventListener('click', () => {
     cartButton.textContent = "✔ Agregado";
     cartButton.style.background = "green";
@@ -55,7 +54,7 @@ cartButton.addEventListener('click', () => {
     }, 2000);
 });
 
-/* ===== VALIDACIÓN ===== */
+/* VALIDACIÓN */
 form.addEventListener('submit', (e) => {
     const nombre = form.querySelector('input[name="nombre"]').value.trim();
     const edad = form.querySelector('input[name="edad"]').value;
@@ -63,6 +62,7 @@ form.addEventListener('submit', (e) => {
     if (nombre === "" || edad === "") {
         e.preventDefault();
         alert("Completa todos los campos");
+        return;
     }
 
     if (edad <= 0) {
